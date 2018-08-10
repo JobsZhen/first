@@ -161,7 +161,7 @@
 .ei-slider{
 	position: relative;
 	width: 100%;
-	max-width: 1920px;
+	max-width: 1000px;
 	height: 500px;
 	margin: 0 auto;	
 }
@@ -193,12 +193,12 @@
 }
 .ei-slider-large li img{
 	width: 100%;
-	filter: url(filters.svg#grayscale); /* Firefox */
-		filter: gray; /* IE */
-		-webkit-filter: grayscale(1); /* Webkit */
+	/*filter: url(filters.svg#grayscale); !* Firefox *!
+		filter: gray; !* IE *!
+		-webkit-filter: grayscale(1); !* Webkit *!
 		opacity:1;
 		
-		-webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+		-webkit-filter: grayscale(100%); !* Chrome 19+ & Safari 6+ *!*/
 }
 .ei-title{
 	position: absolute;	

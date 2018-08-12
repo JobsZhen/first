@@ -743,7 +743,7 @@ a.projectdetail { background: #33877d; color: #fff; padding: 7px 7px 6px 7px; fo
 .threegallery a{left:70% !important; top:10% !important;}
 .threeoverlay {height:96% !important;}
 /* 3 columns portofolio special stylesheet */
-.fourimage { height: 130px !important; }
+.fourimage { height: 300px !important; }
 .fourdetail {left: 24% !important;}
 .fourgallery a{left:60% !important; top:10% !important;}
 .fouroverlay {height:95% !important;}

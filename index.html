@@ -10,6 +10,33 @@
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width"/>
 <title>Studio Francesca</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+            var url='http://localhost:63342/first/';
+            $("#contact").click(function (e) {
+                $("#title_show").html("联系我们");
+                $.ajax({
+                    url : url+'contact.html',
+                    dataType: 'html',
+                    success : function(data) {
+                        $("#content").html(data);
+                    }
+                });
+            });
+			$("#4li").click(function (e) {
+				$("#title_show").html("混合步进电机");
+				$.ajax({
+					url : url+'hun.html',
+					dataType: 'html',
+					success : function(data) {
+						$("#content").html(data);
+					}
+				});
+			});
+
+        });
+	</script>
 <!-- CSS Files-->
 <link rel="stylesheet" href="stylesheets/style.css">
 <link rel="stylesheet" href="stylesheets/homepage.css"><!-- homepage stylesheet -->
@@ -55,15 +82,16 @@
 					<li>
 					<a href="#">产品介绍</a>
 						<ul>
-						<li><a href="28detail.html">20-28系列</a></li>
-						<li><a href="35detail.html">35系列</a></li>
-						<li><a href="39detail.html">39系列</a></li>
-						<li><a href="42detail.html">42系列</a></li>
-						<li><a href="57detail.html">57系列</a></li>
+						<li><a href="#" id="1li">永磁步进电机</a></li>
+						<li><a href="#" id="2li">永磁步进直线电机</a></li>
+						<li><a href="#" id="3li">永磁步进减速电机</a></li>
+						<li><a href="#" id="4li">混合步进电机</a></li>
+						<li><a href="#" id="5li">混合步进直线电机</a></li>
+						<li><a href="#" id="6li">混合步进减速电机</a></li>
 						</ul>
 					</li>
 					<li>
-					<a href="contact.html">联系我们</a>
+					<a href="#" id="contact">联系我们</a>
 					</li>
 				</ul>
 				</nav>
@@ -75,188 +103,86 @@
 <div id="subheader">
 	<div class="row">
 		<div class="twelve columns">
-			<p class="left">
+			<p class="left" id="title_show">
 				深圳市丰源合泰步进电机有限公司
 			</p>
 			<!--<p class="right">
-				 Get in touch today!
-			</p>-->
+                 Get in touch today!
+            </p>-->
 		</div>
 	</div>
 </div>
 <div class="hr">
 </div>
-<!--=============================================================-->
-<!-- SLIDER 
-================================================== -->
-<div id="ei-slider" class="ei-slider">
-	<ul class="ei-slider-large">
-		<li>
-		<img src="img/1.jpg" alt="image01">
-		<div class="ei-title">
-			<!--<h2>工厂全景</h2>-->
-			<!--<h3>工厂全景</h3>-->
-		</div>
-		</li>
-		<li>
-		<img src="img/2.jpg" alt="image02" class="responsiveslide">
-		<div class="ei-title">
-			<!--<h2>工厂</h2>-->
-			<!--<h3>工厂</h3>-->
-		</div>
-		</li>
-		<li>
-		<img src="img/3.jpg" alt="image03" class="responsiveslide">
-		<div class="ei-title">
-			<!--<h2>Dare to</h2>
-			<h3>Smile</h3>-->
-		</div>
-		</li>
-		<li>
-		<img src="img/1.jpg" alt="image04" class="responsiveslide">
-		<div class="ei-title">
-			<!--<h2>Dare to</h2>
-			<h3>ask</h3>-->
-		</div>
-		</li>
-		<li>
-		<img src="img/5.jpg" alt="image05" class="responsiveslide">
-		<div class="ei-title">
-			<!--<h2>Dare to</h2>
-			<h3>refuse</h3>-->
-		</div>
-		</li>
-		<!--<li>
-		<img src="img/2.jpg" alt="image06" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>give</h3>
-		</div>
-		</li>
-		<li>
-		<img src="img/7.jpg" alt="image07" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>receive</h3>
-		</div>
-		</li>
-		<li>
-		<img src="img/8.jpg" alt="image08" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to </h2>
-			<h3>Love</h3>
-		</div>
-		</li>
-		<li>
-		<img src="img/9.jpg" alt="image09" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Dare to</h2>
-			<h3>Forgive</h3>
-		</div>
-		</li>
-		<li>
-		<img src="img/10.jpg" alt="image10" class="responsiveslide">
-		<div class="ei-title">
-			<h2>Stand up & </h2>
-			<h3>Live</h3>
-		</div>
-		</li>-->
-	</ul>
-	<!-- slider-thumbs -->
-	<!--<ul class="ei-slider-thumbs">
-		<li class="ei-slider-element">Current</li>
-		<li><a href="#">Slide 1</a><img src="img/1(1).jpg" class="slideshowthumb" alt="thumb01"/></li>
-		<li><a href="#">Slide 2</a><img src="img/2(1).jpg" class="slideshowthumb" alt="thumb02"/></li>
-		<li><a href="#">Slide 3</a><img src="img/3(1).jpg" class="slideshowthumb" alt="thumb03"/></li>
-		<li><a href="#">Slide 4</a><img src="img/1(1).jpg" class="slideshowthumb" alt="thumb04"/></li>
-		<li><a href="#">Slide 5</a><img src="img/5(1).jpg" class="slideshowthumb" alt="thumb05"/></li>
-		<li><a href="#">Slide 6</a><img src="img/2(1).jpg" class="slideshowthumb" alt="thumb06"/></li>
-		<li><a href="#">Slide 7</a><img src="img/7(1).jpg" class="slideshowthumb" alt="thumb07"/></li>
-		<li><a href="#">Slide 8</a><img src="img/8(1).jpg" class="slideshowthumb" alt="thumb08"/></li>
-		<li><a href="#">Slide 9</a><img src="img/9(1).jpg" class="slideshowthumb" alt="thumb09"/></li>
-		<li><a href="#">Slide 10</a><img src="img/10(1).jpg" class="slideshowthumb" alt="thumb10"/></li>
-	</ul>-->
-</div>
-<div class="minipause">
-</div>
-<!-- SUBHEADER
-================================================== -->
-<!--<div id="subheader">
+
+<div id="content">
+	<!--=============================================================-->
+	<!-- SLIDER
+    ================================================== -->
+	<div id="ei-slider" class="ei-slider">
+		<ul class="ei-slider-large">
+			<li>
+				<img src="img/1.jpg" alt="image01">
+				<div class="ei-title">
+					<!--<h2>工厂全景</h2>-->
+					<!--<h3>工厂全景</h3>-->
+				</div>
+			</li>
+			<li>
+				<img src="img/2.jpg" alt="image02" class="responsiveslide">
+				<div class="ei-title">
+					<!--<h2>工厂</h2>-->
+					<!--<h3>工厂</h3>-->
+				</div>
+			</li>
+			<li>
+				<img src="img/3.jpg" alt="image03" class="responsiveslide">
+				<div class="ei-title">
+					<!--<h2>Dare to</h2>
+                    <h3>Smile</h3>-->
+				</div>
+			</li>
+			<li>
+				<img src="img/1.jpg" alt="image04" class="responsiveslide">
+				<div class="ei-title">
+					<!--<h2>Dare to</h2>
+                    <h3>ask</h3>-->
+				</div>
+			</li>
+			<li>
+				<img src="img/5.jpg" alt="image05" class="responsiveslide">
+				<div class="ei-title">
+					<!--<h2>Dare to</h2>
+                    <h3>refuse</h3>-->
+				</div>
+			</li>
+
+		</ul>
+
+	</div>
+	<div class="minipause">
+	</div>
+
 	<div class="row">
 		<div class="twelve columns">
-			<p class="text-center">
-				 "Vision is the art of seeing what is invisible to others" - Jonathan Swift
+			<div class="centersectiontitle">
+				<h4>深圳市丰源合泰步进电机有限公司</h4>
+			</div>
+			<p>
+				深圳市丰源合泰电机有限公司，是一家具有新型管理模式和强大技术实力的电机生产制造企业。专业生产PM系列永磁式步进电机、永磁式线性步进电机、混合式步进电机、直流无刷电机、步进驱动器等。产品主要应用于：打印机、打票机、雕刻机、医疗仪器、舞台灯光、纺织工业等各行各业工业自动化设备仪器中。
+			</p>
+			<p>
+				为了公司的持续发展，我们始终贯彻推行ISO/TS16949：2002质量管理体系,公司生产的产品获得SGS颁发的ROHS及CE认证证书。我们的宗旨：“用户的要求就是我们行动的准则”。
 			</p>
 		</div>
-	</div>
-</div>
-<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>-->
-<!-- ANIMATED COLUMNS
-================================================== -->
-<!--<div class="row">
-	<div class="twelve columns">
-		<ul class="ca-menu">
-			<li>
-			<a href="#">
-			<span class="ca-icon">F</span>
-			<div class="ca-content">
-				<h2 class="ca-main">Responsive<br/> Design</h2>
-				<h3 class="ca-sub">Across all major devices</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon">H</span>
-			<div class="ca-content">
-				<h2 class="ca-main">Friendly<br/> Documentation</h2>
-				<h3 class="ca-sub">Straight to the point</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon">N</span>
-			<div class="ca-content">
-				<h2 class="ca-main">Alternate<br/> Home Pages</h2>
-				<h3 class="ca-sub">Full slider, boxed or none</h3>
-			</div>
-			</a>
-			</li>
-			<li>
-			<a href="#">
-			<span class="ca-icon">K</span>
-			<div class="ca-content">
-				<h2 class="ca-main">Filterable<br/> Portofolio</h2>
-				<h3 class="ca-sub">Isotop & PrettyPhoto</h3>
-			</div>
-			</a>
-			</li>
-		</ul>
-	</div>
-</div-->
-<!-- CONTENT
-================================================== -->
-<div class="row">
-	<div class="twelve columns">
-		<div class="centersectiontitle">
-			<h4>深圳市丰源合泰步进电机有限公司</h4>
-		</div>
-		<p>
-			深圳市丰源合泰电机有限公司，是一家具有新型管理模式和强大技术实力的电机生产制造企业。专业生产PM系列永磁式步进电机、永磁式线性步进电机、混合式步进电机、直流无刷电机、步进驱动器等。产品主要应用于：打印机、打票机、雕刻机、医疗仪器、舞台灯光、纺织工业等各行各业工业自动化设备仪器中。
-		</p>
-		<p>
-			为了公司的持续发展，我们始终贯彻推行ISO/TS16949：2002质量管理体系,公司生产的产品获得SGS颁发的ROHS及CE认证证书。我们的宗旨：“用户的要求就是我们行动的准则”。
-		</p>
-	</div>
 
+	</div>
 </div>
 <div class="hr">
 </div>
-
 <!-- TWITTER
 ================================================== -->
-<div class="tweetarea">
+<!--<div class="tweetarea">
 	<div class="tweettext">
 		<div class="row">
 			<div class="twelve columns">
@@ -265,7 +191,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
 <!-- FOOOTER 
 ================================================== -->
 <div id="footer">
@@ -335,6 +261,7 @@
 <script src="javascripts/responsivemenu.js"></script>
 <script src="javascripts/jquery.tweet.js"></script>
 <script src="javascripts/twitterusername.js"></script>
+
 
 </body>
 </html>

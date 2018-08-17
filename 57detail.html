@@ -1,36 +1,21 @@
 <!DOCTYPE html>
+<script type="text/javascript">
+    $(function () {
+        var arrayImg = ['57/57HB1.jpg','57/57HB3.jpg','57/57HB4.jpg','57/57HB6.jpg','57/57HBY1.jpg'];
+        start(arrayImg);
+    });
 
+    function start(arrayImg){
+        var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
+        $.each(arrayImg,function(index,value){
+            $("#portofolio").append(div.replace(new RegExp("5","g"), value));
+        });
+    }
+</script>
+<div class="sectiontitle">
+    <h4>57HB系列</h4>
+</div>
     <div id="portofolio">
-        <!-- Project 1-->
-        <div class="three columns category trains">
-            <div class="portofoliothumb">
-                <img src="57/57HB1.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 2-->
-        <div class="three columns category castles">
-            <div class="portofoliothumb">
-                <img src="57/57HB3.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 3-->
-        <div class="three columns category nature">
-            <div class="portofoliothumb">
-                <img src="57/57HB4.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 4-->
-        <div class="three columns category castles">
-            <div class="portofoliothumb">
-                <img src="57/57HB6.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 5-->
-        <div class="three columns category castles" style="float:left">
-            <div class="portofoliothumb">
-                <img src="57/57HBY1.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
     </div>
 
     <br><br>
@@ -52,6 +37,4 @@
         <br>
         <h5>接线图</h5>
         <img src="57/diagram.png" alt="">
-
-
     </div>

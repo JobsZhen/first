@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <script type="text/javascript">
     $(function () {
-        var url='http://localhost:63342/first/';
+        start();
+        $("#28").click(function (e) {
+            start();
+        });
+
+        $("#35").click(function (e) {
+            $.ajax({
+                url : url+'35detail.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#detail").html(data);
+                }
+            });
+        });
+        $("#39").click(function (e) {
+            $.ajax({
+                url : url+'39detail.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#detail").html(data);
+                }
+            });
+        });
+        $("#42").click(function (e) {
+            $.ajax({
+                url : url+'42detail.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#detail").html(data);
+                }
+            });
+        });
+        $("#57").click(function (e) {
+            $.ajax({
+                url : url+'57detail.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#detail").html(data);
+                }
+            });
+        });
+    });
+
+    function start() {
         $.ajax({
             url : url+'28detail.html',
             dataType: 'html',
             success : function(data) {
-                $("#content").html(data);
+                $("#detail").html(data);
             }
         });
-
-
-        $("#contact").click(function (e) {
-            $("#title_show").html("联系我们");
-            $.ajax({
-                url : url+'contact.html',
-                dataType: 'html',
-                success : function(data) {
-                    $("#content").html(data);
-                }
-            });
-        });
-        $("#4li").click(function (e) {
-            $("#title_show").html("混合步进电机");
-
-        });
-
-    });
+    }
 </script>
 <!-- CONTENT 
 ================================================== -->
 <div class="row" style="width: 1200px;">
     <dl class="tabs">
         <dd class="active" id="28"><a href="#simple1">20HB/28HB系列</a></dd>
-        <dd ><a href="#simple1">57HB/57HBY(圆)/57HN/57HBM系列</a></dd>
-        <dd><a href="#simple2">Simple Tab 2</a></dd>
-        <dd><a href="#simple3">Simple Tab 3</a></dd>
+        <dd id="35"><a href="#simple1">35HB系列/42HB系列</a></dd>
+        <dd id="39"><a href="#simple1">39HB系列</a></dd>
+        <dd id="42"><a href="#simple2">42HB/42HBM系列</a></dd>
+        <dd id="57"><a href="#simple3">57HB系列</a></dd>
     </dl>
- <div id="detail">
+ <div class="row" style="width: 1200px;" id="detail">
 
 
  </div>

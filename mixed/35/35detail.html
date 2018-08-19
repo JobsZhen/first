@@ -1,26 +1,22 @@
 <!DOCTYPE html>
+<script type="text/javascript">
+    $(function () {
+        var root='mixed/35/';
+        var arrayImg = ['35HB1.jpg','35HB2.jpg','35HB3.jpg'];
+        start(root,arrayImg);
+    });
+
+    function start(root,arrayImg){
+        var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
+        $.each(arrayImg,function(index,value){
+            $("#portofolio").append(div.replace(new RegExp("5","g"), root+value));
+        });
+    }
+</script>
     <div class="sectiontitle">
         <h4>35HB/35HBN/35HBM/35HBNM系列</h4>
     </div>
     <div id="portofolio">
-        <!-- Project 1-->
-        <div class="three columns category trains" style="float: left">
-            <div class="portofoliothumb">
-                <img src="35/35HB1.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 2-->
-        <div class="three columns category castles"style="float: left">
-            <div class="portofoliothumb">
-                <img src="35/35HB2.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
-        <!-- Project 3-->
-        <div class="three columns category nature"style="float: left">
-            <div class="portofoliothumb">
-                <img src="35/35HB3.jpg" class="fourimage" alt=""/>
-            </div>
-        </div>
     </div>
     <!--<div class="sectiontitle">-->
         <!--<h4>20-28系列详细说明</h4>-->
@@ -37,12 +33,12 @@
 
         <br>
         <h5 class="active">技术参数</h5>
-        <img src="35/electrical.png" alt="" style="width: 1000px;">
+        <img src="mixed/35/electrical.png" alt="" style="width: 1000px;">
         <p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>
         <br>
         <h5>外型图</h5>
-        <img src="35/35Outline.jpg" alt="">
+        <img src="mixed/35/35Outline.jpg" alt="">
         <br>
         <h5>接线图</h5>
-        <img src="35/diagram.png" alt="">
+        <img src="mixed/35/diagram.png" alt="">
     </div>

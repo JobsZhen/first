@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <script type="text/javascript">
     $(function () {
-        var arrayImg = ['57/57HB1.jpg','57/57HB3.jpg','57/57HB4.jpg','57/57HB6.jpg','57/57HBY1.jpg'];
-        start(arrayImg);
+        var root='mixed/28/';
+        var arrayImg = ['20HB2.jpg','28HB1S.jpg','28HB2S.jpg','28HB1.jpg'];
+        start(root,arrayImg);
     });
 
-    function start(arrayImg){
+    function start(root,arrayImg){
         var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
         $.each(arrayImg,function(index,value){
-            $("#portofolio").append(div.replace(new RegExp("5","g"), value));
+            $("#portofolio").append(div.replace(new RegExp("5","g"), root+value));
         });
     }
 </script>
-<div class="sectiontitle">
-    <h4>57HB系列</h4>
-</div>
+<!-- CONTENT 
+================================================== -->
+    <div class="sectiontitle">
+        <h4>20-28系列</h4>
+    </div>
     <div id="portofolio">
     </div>
-
     <br><br>
     <div class="six columns" style="clear: both;">
         <h5 class="active">详细说明</h5>
@@ -29,12 +31,17 @@
 
         <br>
         <h5 class="active">技术参数</h5>
-        <img src="57/electrical.png" alt="" style="width: 1000px;">
+        <img src="mixed/28/electrical.png" alt="" style="width: 1000px;">
         <p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>
         <br>
-        <h5>外型图</h5>
-        <img src="57/Outline.jpg" alt="">
+        <h5>20外型图</h5>
+        <img src="mixed/28/20Outline.jpg" alt="">
+        <br>
+        <h5>28外型图</h5>
+        <img src="mixed/28/28Outline.jpg" alt="">
         <br>
         <h5>接线图</h5>
-        <img src="57/diagram.png" alt="">
+        <img src="mixed/28/diagram.png" alt="">
+
+
     </div>

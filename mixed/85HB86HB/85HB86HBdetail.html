@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <script type="text/javascript">
     $(function () {
-        var arrayImg = ['39/39HB1.JPG','39/39HB2.JPG','39/39HB3.JPG','39/39HB4.jpg'];
-        start(arrayImg);
+        var root='mixed/85HB86HB/';
+        var arrayImg = ['85HS.jpg','86HBY.jpg'];
+        start(root,arrayImg);
     });
 
-    function start(arrayImg){
+    function start(root,arrayImg){
         var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
         $.each(arrayImg,function(index,value){
-            $("#portofolio").append(div.replace(new RegExp("5","g"), value));
+            $("#portofolio").append(div.replace(new RegExp("5","g"), root+value));
         });
     }
 </script>
 <!-- CONTENT 
 ================================================== -->
     <div class="sectiontitle">
-        <h4>39HB/39HBM系列</h4>
+        <h4>85HS/86HBY系列</h4>
     </div>
     <div id="portofolio">
     </div>
     <br><br>
-    <div class="six columns">
+    <div class="six columns" style="clear: both;">
         <h5 class="active">详细说明</h5>
         <p>Step Accuracy ..................................... ±5%</p>
         <p>Temperature ....................................... 80°C Max</p>
@@ -30,14 +31,17 @@
 
         <br>
         <h5 class="active">技术参数</h5>
-        <img src="39/electrical.png" alt="" style="width: 1000px;">
+        <img src="mixed/85HB86HB/electrical.png" alt="" style="width: 1000px;">
         <p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>
         <br>
-        <h5>外型图</h5>
-        <img src="39/39Outline.jpg" alt="">
+        <h5>85HS外型图</h5>
+        <img src="mixed/85HB86HB/85HSOutline.jpg" alt="">
+        <br>
+        <h5>86HBY外型图</h5>
+        <img src="mixed/85HB86HB/86HBYOutline.jpg" alt="">
         <br>
         <h5>接线图</h5>
-        <img src="39/diagram.png" alt="">
+        <img src="mixed/85HB86HB/diagram.png" alt="">
 
 
     </div>

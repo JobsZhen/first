@@ -24,18 +24,53 @@
                     }
                 });
             });
-			$("#4li").click(function (e) {
-				$("#title_show").html("混合步进电机");
-				$.ajax({
-					url : url+'mixed.html',
-					dataType: 'html',
-					success : function(data) {
-						$("#content").html(data);
-					}
-				});
-			});
+            $("#product—ul").find("li").each(function(i,val){
+                var htm=$(this).attr("id");
+                $(this).on('click', function (e) {
+                    $.ajax({
+                        url : url+htm+'.html',
+                        dataType: 'html',
+                        success : function(data) {
+                            $("#content").html(data);
+                        }
+                    });
+
+                });
+            });
+
+            jQuery.loadMain =function(container,root,arrayImg){
+                var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
+                $.each(arrayImg,function(index,value){
+                    $("#"+container).append(div.replace(new RegExp("5","g"), root+value));
+                });
+            }
+
+			jQuery.loadParam =function(container,root,arrayImg){
+                var div='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;">';
+
+                var electrical='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;"><p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>';
+
+                $.each(arrayImg,function(index,value){
+                    var title="";
+                    if(value.indexOf("electrical")>=0){
+                        title="技术参数";
+                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                        return;
+					}else if(value.indexOf("Outline")>=0){
+                        var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
+                        title=num+"外形图";
+                    }else if(value.indexOf("diagram")>=0){
+                        title="接线图";
+                    }else if(value.indexOf("nut")>=0){
+                        title="螺母尺寸图";
+                    }
+                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                });
+            }
 
         });
+
+
 	</script>
 <!-- CSS Files-->
 <link rel="stylesheet" href="stylesheets/style.css">
@@ -81,13 +116,13 @@
 
 					<li>
 					<a href="#">产品介绍</a>
-						<ul>
-						<li><a href="#" id="1li">永磁步进电机</a></li>
-						<li><a href="#" id="2li">永磁步进直线电机</a></li>
-						<li><a href="#" id="3li">永磁步进减速电机</a></li>
-						<li><a href="#" id="4li">混合步进电机</a></li>
-						<li><a href="#" id="5li">混合步进直线电机</a></li>
-						<li><a href="#" id="6li">混合步进减速电机</a></li>
+						<ul id="product—ul">
+						<li><a href="#">永磁步进电机</a></li>
+						<li><a href="#">永磁步进直线电机</a></li>
+						<li><a href="#">永磁步进减速电机</a></li>
+						<li id="mixed"><a href="#">混合步进电机</a></li>
+						<li id="sl"><a href="#" >混合步进直线电机</a></li>
+						<li id="gear"><a href="#">混合步进减速电机</a></li>
 						</ul>
 					</li>
 					<li>

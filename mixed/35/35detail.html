@@ -3,15 +3,12 @@
     $(function () {
         var root='mixed/35/';
         var arrayImg = ['35HB1.jpg','35HB2.jpg','35HB3.jpg'];
-        start(root,arrayImg);
+        $.loadMain("portofolio",root,arrayImg);
+
+        var paramImg = ['electrical.png','35Outline.jpg','diagram.png'];
+        $.loadParam("container",root,paramImg);
     });
 
-    function start(root,arrayImg){
-        var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
-        $.each(arrayImg,function(index,value){
-            $("#portofolio").append(div.replace(new RegExp("5","g"), root+value));
-        });
-    }
 </script>
     <div class="sectiontitle">
         <h4>35HB/35HBN/35HBM/35HBNM系列</h4>
@@ -23,22 +20,11 @@
     <!--</div>-->
     <!-- PROJECT DESCRIPTION-->
     <br><br>
-    <div class="six columns">
+    <div id="container" class="six columns" style="clear: both;">
         <h5 class="active">详细说明</h5>
         <p>Step Accuracy ..................................... ±5%</p>
         <p>Temperature ....................................... 80°C Max</p>
         <p>Ambient Temperature Range .......... -20°CMax~ +50°C Max</p>
         <p>Insulation Resistance ........................ 100mΩMin.500VC DC</p>
         <p>Dielictric Stringth ............................... 500V AC 1minute</p>
-
-        <br>
-        <h5 class="active">技术参数</h5>
-        <img src="mixed/35/electrical.png" alt="" style="width: 1000px;">
-        <p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>
-        <br>
-        <h5>外型图</h5>
-        <img src="mixed/35/35Outline.jpg" alt="">
-        <br>
-        <h5>接线图</h5>
-        <img src="mixed/35/diagram.png" alt="">
     </div>

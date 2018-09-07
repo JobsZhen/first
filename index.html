@@ -14,7 +14,8 @@
 	<script type="text/javascript">
 		//这里是控制项目的根目录，线索部署要改成http://www.szfyht-motor.com/
 		//本地就改成你本地的路径http://localhost:63343/first/
-        var url='http://localhost:63343/first/';
+        var url='http://localhost:63342/first/';
+        var series="";
         $(function () {
             $("#contact").click(function (e) {
                 $("#title_show").html("联系我们");
@@ -27,17 +28,17 @@
                 });
             });
             $("#product—ul").find("li").each(function(i,val){
-                var htm=$(this).attr("id");
                 $(this).on('click', function (e) {
+                    series=$(this).attr("id");
                     $.ajax({
-                        url : url+htm+'.html',
+                        url : url+'series.html',
                         dataType: 'html',
                         success : function(data) {
                             $("#content").html(data);
                         }
                     });
-
                 });
+
             });
 
             jQuery.loadMain =function(container,root,arrayImg){
@@ -119,9 +120,9 @@
 					<li>
 					<a href="#">产品介绍</a>
 						<ul id="product—ul">
-						<li><a href="#">永磁步进电机</a></li>
-						<li><a href="#">永磁步进直线电机</a></li>
-						<li><a href="#">永磁步进减速电机</a></li>
+						<li id=""><a href="#">永磁步进电机</a></li>
+						<li id="ssl"><a href="#">永磁步进直线电机</a></li>
+						<li id="slow"><a href="#">永磁步进减速电机</a></li>
 						<li id="mixed"><a href="#">混合步进电机</a></li>
 						<li id="sl"><a href="#" >混合步进直线电机</a></li>
 						<li id="gear"><a href="#">混合步进减速电机</a></li>

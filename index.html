@@ -66,6 +66,8 @@
                         title="接线图";
                     }else if(value.indexOf("nut")>=0){
                         title="螺母尺寸图";
+                    }else if(value.indexOf("install")>=0){
+                        title="安装尺寸";
                     }
                     $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                 });
@@ -120,12 +122,13 @@
 					<li>
 					<a href="#">产品介绍</a>
 						<ul id="product—ul">
-						<li id=""><a href="#">永磁步进电机</a></li>
-						<li id="ssl"><a href="#">永磁步进直线电机</a></li>
-						<li id="slow"><a href="#">永磁步进减速电机</a></li>
-						<li id="mixed"><a href="#">混合步进电机</a></li>
-						<li id="sl"><a href="#" >混合步进直线电机</a></li>
-						<li id="gear"><a href="#">混合步进减速电机</a></li>
+							<li id="mixed"><a href="#">混合式步进电机</a></li>
+							<li id="sl"><a href="#" >混合式步进直线电机</a></li>
+							<li id="gear"><a href="#">混合式步进减速电机</a></li>
+							<li id="motor"><a href="#">混合式步进电机驱动器</a></li>
+							<li><a href="#">永磁步进减速电机</a></li>
+							<li><a href="#">无刷电机</a></li>
+							<li><a href="#">无刷电机驱动器</a></li>
 						</ul>
 					</li>
 					<li>

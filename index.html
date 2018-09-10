@@ -44,7 +44,7 @@
             jQuery.loadMain =function(container,root,arrayImg){
                 var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
                 $.each(arrayImg,function(index,value){
-                    $("#"+container).append(div.replace(new RegExp("5","g"), root+value));
+                    $("#"+container).append(div.replace(new RegExp("5","g"),"product/"+root+value));
                 });
             }
 
@@ -57,7 +57,7 @@
                     var title="";
                     if(value.indexOf("electrical")>=0){
                         title="技术参数";
-                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                         return;
 					}else if(value.indexOf("Outline")>=0){
                         var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
@@ -67,7 +67,7 @@
                     }else if(value.indexOf("nut")>=0){
                         title="螺母尺寸图";
                     }
-                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                 });
             }
 

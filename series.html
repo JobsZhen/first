@@ -18,7 +18,7 @@
         });
         $("#series").on("click","dd",function(){
             var id=$(this).attr("id");
-            let root=series+"/"+id+"/";     //页面所在的根目录
+            let root="product/"+series+"/"+id+"/";     //页面所在的根目录
             $.ajax({
                 url : url+root+id+'detail.html',
                 dataType: 'html',

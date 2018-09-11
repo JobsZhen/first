@@ -14,8 +14,12 @@
 	<script type="text/javascript">
 		//这里是控制项目的根目录，线索部署要改成http://www.szfyht-motor.com/
 		//本地就改成你本地的路径http://localhost:63343/first/
-        var url='http://localhost:63343/first/';
+        var url='http://www.szfyht-motor.com/';
+        var series="";
         $(function () {
+            $("#home").click(function (e) {
+                $("#title_show").html("深圳市丰源合泰步进电机有限公司");
+            });
             $("#contact").click(function (e) {
                 $("#title_show").html("联系我们");
                 $.ajax({
@@ -27,23 +31,23 @@
                 });
             });
             $("#product—ul").find("li").each(function(i,val){
-                var htm=$(this).attr("id");
                 $(this).on('click', function (e) {
+                    series=$(this).attr("id");
                     $.ajax({
-                        url : url+htm+'.html',
+                        url : url+'series.html',
                         dataType: 'html',
                         success : function(data) {
                             $("#content").html(data);
                         }
                     });
-
                 });
+
             });
 
             jQuery.loadMain =function(container,root,arrayImg){
                 var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
                 $.each(arrayImg,function(index,value){
-                    $("#"+container).append(div.replace(new RegExp("5","g"), root+value));
+                    $("#"+container).append(div.replace(new RegExp("5","g"),"product/"+root+value));
                 });
             }
 
@@ -56,7 +60,7 @@
                     var title="";
                     if(value.indexOf("electrical")>=0){
                         title="技术参数";
-                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                         return;
 					}else if(value.indexOf("Outline")>=0){
                         var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
@@ -65,8 +69,10 @@
                         title="接线图";
                     }else if(value.indexOf("nut")>=0){
                         title="螺母尺寸图";
+                    }else if(value.indexOf("install")>=0){
+                        title="安装尺寸";
                     }
-                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), root+value));
+                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                 });
             }
 
@@ -112,19 +118,20 @@
 			<nav id="nav-wrap">
 				<ul class="nav-bar sf-menu">
 
-					<li class="current">
-					<a href="index.html">首页</a>
+					<li class="current" id="home">
+						<a href="index.html">首页</a>
 					</li>
 
 					<li>
-					<a href="#">产品介绍</a>
+					<a href="#" id="productInfo">产品介绍</a>
 						<ul id="product—ul">
-						<li><a href="#">混合式步进电机驱动器</a></li>
-						<li><a href="#">无刷电机</a></li>
-						<li><a href="#">无刷电机驱动器</a></li>
-						<li id="mixed"><a href="#">混合步进电机</a></li>
-						<li id="sl"><a href="#" >混合步进直线电机</a></li>
-						<li id="gear"><a href="#">混合步进减速电机</a></li>
+							<li id="mixed"><a href="#">混合式步进电机</a></li>
+							<li id="sl"><a href="#" >混合式步进直线电机</a></li>
+							<!--<li id="gear"><a href="#">混合式步进减速电机</a></li>-->
+							<li id="motor"><a href="#">混合式步进电机驱动器</a></li>
+							<!--<li><a href="#">永磁步进减速电机</a></li>
+							<li><a href="#">无刷电机</a></li>
+							<li><a href="#">无刷电机驱动器</a></li>-->
 						</ul>
 					</li>
 					<li>

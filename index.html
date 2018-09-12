@@ -14,7 +14,7 @@
 	<script type="text/javascript">
 		//这里是控制项目的根目录，线索部署要改成http://www.szfyht-motor.com/
 		//本地就改成你本地的路径http://localhost:63343/first/
-        var url='http://www.szfyht-motor.com/';
+        var url='http://localhost:63342/first/';
         var series="";
         $(function () {
             $("#contact").click(function (e) {
@@ -58,8 +58,8 @@
                         $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
                         return;
 					}else if(value.indexOf("Outline")>=0){
-                        var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
-                        title=num+"外形图";
+                        // var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
+                        title="外形图";
                     }else if(value.indexOf("diagram")>=0){
                         title="接线图";
                     }else if(value.indexOf("nut")>=0){
@@ -122,10 +122,10 @@
 						<ul id="product—ul">
 							<li id="mixed"><a href="#">混合式步进电机</a></li>
 							<li id="sl"><a href="#" >混合式步进直线电机</a></li>
-							<!--<li id="gear"><a href="#">混合式步进减速电机</a></li>-->
+							<li id="gear"><a href="#">混合式步进减速电机</a></li>
 							<li id="motor"><a href="#">混合式步进电机驱动器</a></li>
+							<li id="less"><a href="#">无刷电机</a></li>
 							<!--<li><a href="#">永磁步进减速电机</a></li>
-							<li><a href="#">无刷电机</a></li>
 							<li><a href="#">无刷电机驱动器</a></li>-->
 						</ul>
 					</li>

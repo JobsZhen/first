@@ -10,71 +10,6 @@
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width"/>
 <title>深圳市丰源合泰步进电机有限公司</title>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript">
-		//这里是控制项目的根目录，线索部署要改成   http://www.szfyht-motor.com/
-		//本地就改成你本地的路径   http://localhost:63343/first/
-        var url='http://localhost:63342/ROOT/';
-        var series="";
-        $(function () {
-            $("#contact").click(function (e) {
-                $.ajax({
-                    url : url+'contact.html',
-                    dataType: 'html',
-                    success : function(data) {
-                        $("#content").html(data);
-                    }
-                });
-            });
-			$("#product—ul").find("li").on('click', function (e) {
-				series=$(this).attr("id");
-				$.ajax({
-					url : url+'series.html',
-					dataType: 'html',
-					success : function(data) {
-						$("#content").html(data);
-					}
-				});
-			});
-
-
-
-            jQuery.loadMain =function(container,root,arrayImg){
-                var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
-                $.each(arrayImg,function(index,value){
-                    $("#"+container).append(div.replace(new RegExp("5","g"),"product/"+root+value));
-                });
-            }
-
-			jQuery.loadParam =function(container,root,arrayImg){
-                var div='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;">';
-
-                var electrical='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;"><p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>';
-
-                $.each(arrayImg,function(index,value){
-                    var title="";
-                    if(value.indexOf("electrical")>=0){
-                        title="技术参数";
-                        $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
-                        return;
-					}else if(value.indexOf("Outline")>=0){
-                        // var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
-                        title="外形图";
-                    }else if(value.indexOf("diagram")>=0){
-                        title="接线图";
-                    }else if(value.indexOf("nut")>=0){
-                        title="螺母尺寸图";
-                    }else if(value.indexOf("install")>=0){
-                        title="安装尺寸";
-                    }
-                    $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
-                });
-            }
-
-        });
-
-
-	</script>
 <!-- CSS Files-->
 <link rel="stylesheet" href="stylesheets/style.css">
 <link rel="stylesheet" href="stylesheets/homepage.css"><!-- homepage stylesheet -->
@@ -83,7 +18,7 @@
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->    
+  <![endif]-->
 </head>
 <body>
 <!-- HIDDEN PANEL 
@@ -93,7 +28,7 @@
 		<div class="twelve columns">
 			<img src="images/info.png" class="pics" alt="info">
 			<div class="infotext">
-				Thank you for visiting my theme! Replace this with your message to visitors.
+				<!--Thank you for visiting my theme! Replace this with your message to visitors.-->
 			</div>
 		</div>
 	</div>
@@ -161,43 +96,33 @@
 	<div id="ei-slider" class="ei-slider">
 		<ul class="ei-slider-large">
 			<li>
-				<img src="img/1.jpg" alt="image01">
+				<img src="img/1.jpg" alt="image01" class="responsiveslide">
 				<div class="ei-title">
-					<!--<h2>工厂全景</h2>-->
-					<!--<h3>工厂全景</h3>-->
 				</div>
 			</li>
 			<li>
 				<img src="img/2.jpg" alt="image02" class="responsiveslide">
 				<div class="ei-title">
-					<!--<h2>工厂</h2>-->
-					<!--<h3>工厂</h3>-->
 				</div>
 			</li>
 			<li>
 				<img src="img/3.jpg" alt="image03" class="responsiveslide">
 				<div class="ei-title">
-					<!--<h2>Dare to</h2>
-                    <h3>Smile</h3>-->
-				</div>
-			</li>
-			<li>
-				<img src="img/1.jpg" alt="image04" class="responsiveslide">
-				<div class="ei-title">
-					<!--<h2>Dare to</h2>
-                    <h3>ask</h3>-->
 				</div>
 			</li>
 			<li>
 				<img src="img/5.jpg" alt="image05" class="responsiveslide">
 				<div class="ei-title">
-					<!--<h2>Dare to</h2>
-                    <h3>refuse</h3>-->
 				</div>
 			</li>
-
 		</ul>
-
+		<ul class="ei-slider-thumbs" style="display: none">
+			<li class="ei-slider-element"  style="display: none">Current</li>
+			<li  style="display: none"><a href="#">Slide 1</a><img src="img/1.jpg" class="slideshowthumb" alt="thumb01"/></li>
+			<li  style="display: none"><a href="#">Slide 2</a><img src="img/2.jpg" class="slideshowthumb" alt="thumb02"/></li>
+			<li  style="display: none"><a href="#">Slide 3</a><img src="img/3.jpg" class="slideshowthumb" alt="thumb03"/></li>
+			<li  style="display: none"><a href="#">Slide 4</a><img src="img/5.jpg" class="slideshowthumb" alt="thumb04"/></li>
+		</ul>
 	</div>
 	<div class="minipause">
 	</div>
@@ -221,16 +146,6 @@
 </div>
 <!-- TWITTER
 ================================================== -->
-<!--<div class="tweetarea">
-	<div class="tweettext">
-		<div class="row">
-			<div class="twelve columns">
-				<div class="tweet">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>-->
 <!-- FOOOTER 
 ================================================== -->
 <div id="footer">
@@ -244,21 +159,6 @@
 	</div>
 	<div class="four columns">
 		<h1><!--GET SOCIAL--></h1>
-		<!--<div class="social facebook">
-			<a href="#"></a>
-		</div>
-		<div class="social twitter">
-			<a href="#"></a>
-		</div>
-		<div class="social deviantart">
-			<a href="#"></a>
-		</div>
-		<div class="social flickr">
-			<a href="#"></a>
-		</div>
-		<div class="social dribbble">
-			<a href="#"></a>
-		</div>-->
 	</div>
 	<div class="four columns">
 		<h1 class="newsmargin"><!--NEWSLETTER--></h1>
@@ -300,7 +200,70 @@
 <script src="javascripts/responsivemenu.js"></script>
 <script src="javascripts/jquery.tweet.js"></script>
 <script src="javascripts/twitterusername.js"></script>
+<script type="text/javascript">
+    //这里是控制项目的根目录，线索部署要改成   http://www.szfyht-motor.com/
+    //本地就改成你本地的路径   http://localhost:63343/first/
+    var url='http://localhost:63342/ROOT/';
+    var series="";
+    $(function () {
+        $("#contact").click(function (e) {
+            $.ajax({
+                url : url+'contact.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#content").html(data);
+                }
+            });
+        });
+        $("#product—ul").find("li").on('click', function (e) {
+            series=$(this).attr("id");
+            $.ajax({
+                url : url+'series.html',
+                dataType: 'html',
+                success : function(data) {
+                    $("#content").html(data);
+                }
+            });
+        });
 
+
+
+        jQuery.loadMain =function(container,root,arrayImg){
+            var div='<div class=\"three columns category castles\" style=\"float:left\"><div class=\"portofoliothumb\"><img src=\"5\" class=\"fourimage\"/></div></div>';
+            $.each(arrayImg,function(index,value){
+                $("#"+container).append(div.replace(new RegExp("5","g"),"product/"+root+value));
+            });
+        }
+
+        jQuery.loadParam =function(container,root,arrayImg){
+            var div='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;">';
+
+            var electrical='<br> <h5 class="active">4</h5><img src="5" alt="" style="width: 1000px;"><p>*以上型号只为代表产品,可根据客户要求对轴径/线长/铣扁位/及电参数作订制</p>';
+
+            $.each(arrayImg,function(index,value){
+                var title="";
+                if(value.indexOf("electrical")>=0){
+                    title="技术参数";
+                    $("#"+container).append(electrical.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
+                    return;
+                }else if(value.indexOf("Outline")>=0){
+                    // var num=value.replace(new RegExp("Outline.jpg","g"),"").replace(new RegExp("Outline.png","g"),"");
+                    title="外形图";
+                }else if(value.indexOf("diagram")>=0){
+                    title="接线图";
+                }else if(value.indexOf("nut")>=0){
+                    title="螺母尺寸图";
+                }else if(value.indexOf("install")>=0){
+                    title="安装尺寸";
+                }
+                $("#"+container).append(div.replace(new RegExp("4","g"),title).replace(new RegExp("5","g"), "product/"+root+value));
+            });
+        }
+
+    });
+
+
+</script>
 
 </body>
 </html>
